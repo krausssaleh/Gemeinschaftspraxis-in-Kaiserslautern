@@ -1,0 +1,389 @@
+:root {
+  --ink: #18313a;
+  --muted: #61747b;
+  --line: #dce7e9;
+  --soft: #f2f8f8;
+  --brand: #007b8f;
+  --brand-dark: #005b69;
+  --accent: #d89b44;
+  --white: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--white);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 16px clamp(18px, 5vw, 72px);
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.brand img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.brand strong {
+  display: block;
+  font-size: 22px;
+  color: var(--brand-dark);
+}
+
+.brand small {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 14px 20px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.main-nav a,
+.site-footer a {
+  text-decoration: none;
+}
+
+.main-nav a:hover,
+.site-footer a:hover {
+  color: var(--brand);
+}
+
+.hero,
+.section {
+  padding: clamp(56px, 8vw, 104px) clamp(18px, 5vw, 72px);
+  scroll-margin-top: 160px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: center;
+  min-height: 720px;
+  background: linear-gradient(110deg, #eef9f9 0%, #ffffff 58%);
+}
+
+.hero h1,
+.section h2 {
+  margin: 0 0 20px;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.hero h1 {
+  font-size: clamp(40px, 5.2vw, 66px);
+}
+
+.section h2 {
+  font-size: clamp(32px, 4vw, 54px);
+}
+
+.hero p,
+.section p {
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.hero img {
+  width: 100%;
+  height: min(58vw, 560px);
+  object-fit: contain;
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 24px 70px rgba(24, 49, 58, 0.18);
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  color: var(--brand);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 20px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button.primary {
+  background: var(--brand);
+  color: var(--white);
+}
+
+.button.primary:hover {
+  background: var(--brand-dark);
+}
+
+.button.secondary {
+  background: var(--white);
+  border-color: var(--line);
+}
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(320px, 1.15fr);
+  gap: clamp(30px, 5vw, 72px);
+  align-items: center;
+}
+
+.muted {
+  background: var(--soft);
+}
+
+.image-grid,
+.team-photos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.image-grid img {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.team-photos img,
+.person-card img {
+  width: 100%;
+  object-fit: contain;
+  background: var(--white);
+  border-radius: 8px;
+}
+
+.team-photos img {
+  height: 330px;
+}
+
+.person-card img {
+  height: 430px;
+}
+
+.section-heading {
+  max-width: 860px;
+  margin-bottom: 34px;
+}
+
+.doctor-grid,
+.services {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.person-card,
+.services article,
+.contact-form {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 12px 32px rgba(24, 49, 58, 0.08);
+}
+
+.person-card {
+  padding: 18px;
+}
+
+.person-card h3 {
+  margin: 22px 0 4px;
+  font-size: 26px;
+}
+
+.person-card p {
+  margin: 0 0 12px;
+}
+
+.person-card ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+  margin: 18px 0 0;
+  list-style: none;
+}
+
+.person-card li {
+  padding: 8px 12px;
+  background: var(--soft);
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.services {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.services article {
+  padding: 24px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.callout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  background: var(--ink);
+  color: var(--white);
+}
+
+.callout p,
+.callout .eyebrow {
+  color: #d9edf0;
+}
+
+.contact {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+  gap: clamp(30px, 5vw, 72px);
+}
+
+.hours {
+  display: grid;
+  gap: 4px;
+  padding-top: 14px;
+}
+
+.contact-form {
+  display: grid;
+  gap: 16px;
+  padding: clamp(20px, 4vw, 34px);
+}
+
+.contact-form label {
+  display: grid;
+  gap: 8px;
+  font-weight: 800;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #c7d6d9;
+  border-radius: 8px;
+  font: inherit;
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 22px;
+  padding: 28px clamp(18px, 5vw, 72px);
+  background: #10252c;
+  color: var(--white);
+}
+
+.site-footer p {
+  margin: 6px 0 0;
+  color: #c6d9dd;
+}
+
+.site-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 20px;
+}
+
+@media (max-width: 900px) {
+  .site-header,
+  .site-footer,
+  .callout {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .main-nav {
+    justify-content: flex-start;
+  }
+
+  .hero,
+  .split,
+  .contact,
+  .doctor-grid,
+  .services {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .image-grid,
+  .team-photos {
+    grid-template-columns: 1fr;
+  }
+
+  .hero img,
+  .image-grid img,
+  .team-photos img,
+  .person-card img {
+    height: 280px;
+  }
+}
